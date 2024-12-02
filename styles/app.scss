@@ -1,0 +1,139 @@
+:root {
+  --background: #ededed;
+  --foreground: #171717;
+  --primaryColor: #e3651d;
+  --transparentColor: #c2bfbf;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #191919;
+    --foreground: #ededed;
+    --transparentColor: #4e4d4d;
+  }
+}
+$primaryColor: #e3651d;
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background);
+}
+h1,
+h2,
+h3,
+h4,
+p {
+  color: var(--foreground);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b {
+  font-family: var(--HelveticaNeueBold);
+}
+
+p,
+label,
+small,
+span,
+a,
+button {
+  font-family: var(--HelveticaNeueMedium);
+}
+
+button,
+a {
+  font-size: 16px;
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.btn {
+  border: 0;
+  padding: 15px 25px;
+  border-radius: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.4s;
+  &.btn-normal {
+    border: solid 2px var(--primaryColor);
+    background-color: var(--primaryColor);
+    color: white;
+    &:hover {
+      background-color: transparent;
+      border: solid 2px var(--primaryColor);
+      color: var(--primaryColor);
+    }
+  }
+  &.btn-outline {
+    background-color: transparent;
+    border: solid 2px var(--primaryColor);
+    color: var(--primaryColor);
+    &:hover {
+      background-color: var(--primaryColor);
+      color: white;
+    }
+  }
+  &.btn-disabled {
+    background-color: rgba($color: #fff, $alpha: 0.5);
+  }
+  &:focus {
+    outline: 0;
+  }
+}
+
+img {
+  object-fit: cover;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* html {
+    color-scheme: dark;
+  } */
+}
+
+.flex {
+  display: flex;
+  &.f-wrap {
+    flex-wrap: wrap;
+  }
+  &.f-column {
+    flex-direction: column;
+  }
+  &.jc-se {
+    justify-content: space-evenly;
+  }
+  &.jc-sb {
+    justify-content: space-between;
+  }
+  &.ai-c {
+    justify-content: center;
+  }
+}

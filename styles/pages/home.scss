@@ -1,0 +1,194 @@
+.home {
+  .sectionTitleAndSubTitle {
+    margin-bottom: 25px;
+    gap: 15px 0;
+    h2 {
+      font-size: 40px;
+    }
+    p {
+      font-size: 16px;
+      color: $primaryColor;
+      text-transform: uppercase;
+    }
+  }
+  .home-banner {
+    width: 100%;
+    height: 100vh;
+    justify-content: space-evenly;
+    section {
+      width: 50%;
+    }
+    .hb-left {
+      border-bottom-right-radius: 150px;
+      overflow: hidden;
+      position: relative;
+      &::after {
+        position: absolute;
+        content: "";
+        background-color: rgba($color: $primaryColor, $alpha: 0.4);
+        width: 100%;
+        height: 100%;
+      }
+      img {
+        width: 100%;
+      }
+    }
+    .hb-right {
+      align-items: center;
+      justify-content: center;
+      gap: 25px 0;
+      z-index: 888;
+      h1,
+      h3,
+      p {
+        width: 80%;
+      }
+      & > div:first-child {
+        background-color: var(--background);
+        margin-left: -65%;
+        padding: 75px;
+        border-radius: 250px;
+      }
+      h1 {
+        font-size: 8vh;
+        // background-color: grey;
+
+        background: -webkit-linear-gradient(#efefef, $primaryColor);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      section {
+        // background-color: aqua;
+        gap: 15px 0;
+        width: 90%;
+        align-items: flex-start;
+        h3 {
+          color: var(--primaryColor) !important;
+          font-size: 5vh;
+        }
+        p {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  .home-about {
+    width: 80%;
+    margin: 50px auto;
+    ul {
+      margin: 25px 0;
+      li {
+        width: 45%;
+        border: solid 2px rgba($color: #fff, $alpha: 0.1);
+      }
+    }
+  }
+  .home-contact {
+    width: 80%;
+    margin: 50px auto;
+    .hc-formAndInfos {
+      margin-top: 25px;
+      justify-content: space-between;
+      & > div,
+      & > form {
+        width: 48%;
+      }
+      & > div {
+        border: solid 2px var(--transparentColor);
+        border-radius: 100px;
+        padding: 35px 25px;
+        ul {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+  .home-projects {
+    width: 80%;
+    margin: auto;
+    .hp-list {
+      justify-content: space-between;
+      .projectCard {
+        width: 30%;
+        text-align: center;
+        gap: 10px 0;
+        div {
+          width: 100%;
+          display: flex;
+          position: relative;
+          height: 400px;
+          cursor: pointer;
+          &:hover {
+            section {
+              opacity: 1 !important;
+            }
+          }
+          img {
+            width: 100%;
+            height: 100%;
+          }
+          section {
+            transition: all 0.4s;
+            position: absolute;
+            width: 90%;
+            height: 90%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            gap: 15px;
+            opacity: 0;
+            background-color: $primaryColor;
+            span {
+              background-color: var(--background);
+              height: 60px;
+              width: 60px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 30px;
+              border-radius: 15px;
+            }
+          }
+        }
+        b {
+          color: $primaryColor;
+        }
+        a {
+          color: var(--foreground);
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.contactInformationList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 25px;
+
+  b,
+  a,
+  span {
+    font-size: 25px;
+  }
+  li {
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    b {
+      color: $primaryColor;
+    }
+    span,
+    a {
+      color: var(--foreground);
+    }
+  }
+}

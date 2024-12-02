@@ -1,0 +1,39 @@
+nav {
+  width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.4s;
+  border-radius: 100px;
+  position: fixed;
+  top: 25px;
+  padding: 25px;
+  //   background-color: grey;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .nav-logo {
+    color: white;
+    font-size: 60px;
+  }
+  .nav-links {
+    display: flex;
+    gap: 0 25px;
+    min-width: 50%;
+    justify-content: space-evenly;
+    a {
+      color: white;
+      font-size: 25px;
+      &:hover {
+        color: var(--primaryColor);
+      }
+    }
+  }
+}
+.navOnScroll {
+  background-color: var(--transparentColor);
+
+  .nav-logo {
+    font-size: 30px;
+  }
+}
