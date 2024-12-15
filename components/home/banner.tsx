@@ -1,9 +1,8 @@
-"use client";
 import React from "react";
 import { Typewriter } from "nextjs-simple-typewriter";
 import { Button } from "@/uikits/buttons";
 
-async function HomeBanner() {
+function HomeBanner() {
   return (
     <div className="home-banner flex">
       <section className="hb-left flex">
@@ -28,10 +27,9 @@ async function HomeBanner() {
             />
           </h3>
           <p>
-            Hello! I am Web Developer from United States, New York. I have rich{" "}
-            <br />
-            experience in web site design and building, also I am good at <br />
-            wordpress. I love to talk with you about our unique. ContactMe
+            Hello! I am Web Developer from United States, New York. I have rich
+            experience in web site design and building, also I am good at
+            wordpress.
           </p>
           <div
             className="flex"

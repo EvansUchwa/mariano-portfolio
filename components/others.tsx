@@ -11,6 +11,9 @@ import {
   SkillIconsKubernetes,
   SkillIconsNginx,
 } from "@/uikits/icons";
+import { siteFastLinks } from "@/utils/others";
+import Link from "next/link";
+import { ReactElement } from "react";
 
 type TextSectionProps = {
   title: string;
@@ -58,7 +61,7 @@ export function MyContactInformationList({
   );
 }
 
-export const technologiesIconsEnum: any = {
+export const technologiesIconsEnum: Record<string, ReactElement> = {
   Docker: <SkillIconsDocker />,
   Kubernetes: <SkillIconsKubernetes />,
   Ansible: <SkillIconsAnsible />,
@@ -70,3 +73,15 @@ export const technologiesIconsEnum: any = {
   Aws: <SkillIconsAwsDark />,
   Nginx: <SkillIconsNginx />,
 };
+
+export default function SiteNavigationLink() {
+  return (
+    <>
+      {siteFastLinks.map((link, index) => (
+        <Link key={index} href={link.href}>
+          {link.label}
+        </Link>
+      ))}
+    </>
+  );
+}

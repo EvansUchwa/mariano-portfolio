@@ -17,13 +17,15 @@ nav {
     font-size: 60px;
   }
   .nav-links {
+    margin-left: auto;
     display: flex;
+    justify-content: flex-end;
     gap: 0 25px;
     min-width: 50%;
-    justify-content: space-evenly;
+    // justify-content: space-evenly;
     a {
       color: white;
-      font-size: 25px;
+      font-size: 18px;
       &:hover {
         color: var(--primaryColor);
       }
@@ -31,7 +33,7 @@ nav {
   }
 }
 .navOnScroll {
-  background-color: var(--transparentColor);
+  background-color: #000;
 
   .nav-logo {
     font-size: 30px;

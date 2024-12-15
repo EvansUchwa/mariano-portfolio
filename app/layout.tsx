@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "../styles/index.scss";
 import Navbar from "@/uikits/nav";
+import Footer from "@/uikits/footer";
+import { MyParticles } from "@/components/particle";
 
 const helvetica1 = localFont({
   src: "./fonts/HelveticaNeueBold.otf",
@@ -38,6 +40,8 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        <MyParticles />
+        <Footer />
       </body>
     </html>
   );

@@ -1,4 +1,3 @@
-"use server";
 import React from "react";
 import { MyContactInformationList, SectionTitleAndSubTitle } from "../others";
 import { getMarkdownData } from "@/lib/mardown";

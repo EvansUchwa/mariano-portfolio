@@ -1,0 +1,42 @@
+footer {
+  margin-top: 50px;
+  padding: 50px 0;
+  width: 100%;
+  background-color: #000;
+  justify-content: center;
+  align-items: center;
+  gap: 25px 0;
+  .footerSocials {
+    gap: 0 15px;
+    a {
+      background-color: white;
+      border-radius: 50px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--background);
+      transition: 0.3s ease;
+      &:hover {
+        background-color: var(--primaryColor);
+        color: white;
+      }
+    }
+  }
+  .footerFastLinks {
+    color: var(--foreground);
+    gap: 15px;
+    a {
+      transition: 0.3s ease;
+      &:hover {
+        color: var(--primaryColor);
+      }
+    }
+  }
+  .footerBottom {
+    a {
+      color: var(--primaryColor);
+    }
+  }
+}

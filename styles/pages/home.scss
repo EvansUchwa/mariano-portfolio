@@ -1,4 +1,7 @@
 .home {
+  display: flex;
+  flex-direction: column;
+  gap: 50px 0;
   .sectionTitleAndSubTitle {
     margin-bottom: 25px;
     gap: 15px 0;
@@ -46,6 +49,7 @@
       & > div:first-child {
         background-color: var(--background);
         margin-left: -65%;
+        margin-top: auto;
         padding: 75px;
         border-radius: 250px;
       }
@@ -74,7 +78,7 @@
   }
   .home-about {
     width: 80%;
-    margin: 50px auto;
+    margin: 0 auto;
     ul {
       margin: 25px 0;
       li {
@@ -83,31 +87,13 @@
       }
     }
   }
-  .home-contact {
-    width: 80%;
-    margin: 50px auto;
-    .hc-formAndInfos {
-      margin-top: 25px;
-      justify-content: space-between;
-      & > div,
-      & > form {
-        width: 48%;
-      }
-      & > div {
-        border: solid 2px var(--transparentColor);
-        border-radius: 100px;
-        padding: 35px 25px;
-        ul {
-          flex-direction: column;
-        }
-      }
-    }
-  }
+
   .home-projects {
     width: 80%;
-    margin: auto;
+    margin: 0 auto;
     .hp-list {
       justify-content: space-between;
+      gap: 50px;
       .projectCard {
         width: 30%;
         text-align: center;
@@ -121,6 +107,7 @@
           &:hover {
             section {
               opacity: 1 !important;
+              background-image: url("../../public/images/patterns/bg.png");
             }
           }
           img {
@@ -141,7 +128,7 @@
             flex-wrap: wrap;
             gap: 15px;
             opacity: 0;
-            background-color: $primaryColor;
+            // background-color: $primaryColor;
             span {
               background-color: var(--background);
               height: 60px;
@@ -160,6 +147,55 @@
         a {
           color: var(--foreground);
           text-decoration: underline;
+        }
+      }
+    }
+  }
+  .home-skills {
+    width: 80%;
+    margin: auto;
+    .hs-list {
+      justify-content: space-evenly;
+      gap: 25px;
+    }
+    .skillCard {
+      width: 30%;
+      padding: 25px 0;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      gap: 0 25px;
+      color: var(--foreground);
+      // background-color: var(--transparentColor);
+      border: dashed 2px var(--transparentColor);
+      border-radius: 50px;
+      transition: all 0.5s;
+      &:hover {
+        border-color: transparent;
+        background-color: #000;
+        background-image: url("../../public/images/patterns/bg.png");
+      }
+      svg {
+        font-size: 50px;
+      }
+    }
+  }
+  .home-contact {
+    width: 80%;
+    margin: 0 auto;
+    .hc-formAndInfos {
+      margin-top: 25px;
+      justify-content: space-between;
+      & > div,
+      & > form {
+        width: 48%;
+      }
+      & > div {
+        border: solid 2px var(--transparentColor);
+        border-radius: 100px;
+        padding: 35px 25px;
+        ul {
+          flex-direction: column;
         }
       }
     }
@@ -189,6 +225,88 @@
     span,
     a {
       color: var(--foreground);
+      text-align: right;
+    }
+  }
+}
+
+@media screen and (max-width: 758px) {
+  .home {
+    .home-banner {
+      flex-wrap: wrap;
+      height: auto;
+      section {
+        width: 100%;
+      }
+      .hb-left {
+        height: 65vh;
+        border-radius: 0;
+      }
+      .hb-right {
+        & > div:first-child {
+          margin-top: -40vw;
+          margin-left: auto;
+          margin-right: auto;
+          padding: 0;
+          width: 90vw;
+          height: 50vw;
+          border-radius: 0;
+          border-top-left-radius: 250px;
+          border-top-right-radius: 250px;
+          display: flex;
+          align-items: flex-end;
+          justify-content: center;
+          text-align: center;
+          // border: solid 2px #000;
+        }
+        section {
+        }
+      }
+    }
+
+    .home-about {
+      width: 90%;
+      ul {
+        li {
+          width: 100%;
+        }
+      }
+    }
+
+    .home-projects {
+      width: 90%;
+      .hp-list {
+        .projectCard {
+          width: 100%;
+        }
+      }
+    }
+
+    .home-skills {
+      width: 90%;
+      .skillCard {
+        width: 100%;
+      }
+    }
+    .home-contact {
+      width: 90%;
+
+      .hc-formAndInfos {
+        gap: 25px 0;
+        & > div,
+        & > form {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .contactInformationList {
+    flex-direction: column;
+    b,
+    a,
+    span {
+      font-size: 18px;
     }
   }
 }

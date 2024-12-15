@@ -1,5 +1,5 @@
 "use client";
-import Link from "next/link";
+import SiteNavigationLink from "@/components/others";
 import React, { useEffect, useState } from "react";
 
 function Navbar() {
@@ -20,11 +20,7 @@ function Navbar() {
         <h1>GM</h1>
       </div>
       <div className="nav-links">
-        {[0, 0, 0, 0, 0].map((item, i) => (
-          <Link key={"nav link nb" + i} href={"/"}>
-            Lien
-          </Link>
-        ))}
+        <SiteNavigationLink />
       </div>
     </nav>
   );

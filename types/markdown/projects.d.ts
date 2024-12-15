@@ -9,3 +9,7 @@ export type projectType = {
 export type projectMardownType = allPageTitleAndSubtitleType & {
   projects: projectType[];
 };
+
+export type skillsMardownType = allPageTitleAndSubtitleType & {
+  skills: projectType[];
+};

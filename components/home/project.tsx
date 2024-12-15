@@ -10,7 +10,7 @@ async function HomeProjects() {
   )) as projectMardownType;
 
   return (
-    <div className="home-projects">
+    <div className="home-projects" id="works">
       <SectionTitleAndSubTitle title={title} subTitle={subTitle} />
       <div className="hp-list flex f-wrap">
         {projects.map((item, i) => (

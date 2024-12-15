@@ -1,4 +1,3 @@
-"use server";
 import React from "react";
 import { MyContactInformationList, SectionTitleAndSubTitle } from "../others";
 import { getMarkdownData } from "@/lib/mardown";
@@ -6,8 +5,9 @@ import { contactInfosType } from "@/types/global";
 
 async function HomeContact() {
   const contactData = (await getMarkdownData("contact.md")) as contactInfosType;
+
   return (
-    <div className="home-contact">
+    <div className="home-contact" id="contact">
       <SectionTitleAndSubTitle
         title="Contact"
         subTitle="Prenons contact pour discuter de vos projets"
