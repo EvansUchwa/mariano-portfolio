@@ -38,6 +38,7 @@ p {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  letter-spacing: 1.5px;
 }
 
 a {
@@ -52,16 +53,18 @@ h4,
 h5,
 h6,
 b {
-  font-family: var(--HelveticaNeueBold);
+  font-family: var(--MontserratBold);
 }
 
 p,
 label,
 small,
-span,
+span {
+  font-family: var(--MontserratLight);
+}
 a,
 button {
-  font-family: var(--HelveticaNeueMedium);
+  font-family: var(--MontserratRegular);
 }
 
 button,
