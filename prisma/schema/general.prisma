@@ -1,0 +1,43 @@
+model FileUploadeds {
+  id String @id @default(cuid())
+  name String
+  url String
+  article Articles? @relation("ArticleFile")
+  articleId String?
+  user User? @relation("UserBanner")
+  userId String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Articles {
+  id String @id @default(cuid())
+  title String
+  content String
+  description String
+  autor User @relation("UserArticles", fields: [autorId], references: [id])
+  autorId String
+  views String[] @default([])
+  banner FileUploadeds @relation("ArticleFile", fields: [bannerId], references: [id])
+  bannerId String @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model User {
+  id String @id @default(cuid())
+  fullname String
+  email String @unique
+  address String
+  phone String
+  password String
+  role String
+  age Int
+  articles Articles[] @relation("UserArticles")
+  banner FileUploadeds? @relation("UserBanner", fields: [bannerId], references: [id])
+  bannerId String? @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+

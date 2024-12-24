@@ -8,19 +8,33 @@
     "start": "next start",
     "lint": "next lint"
   },
+  "prisma": {
+    "seed": "npx ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts",
+    "schema": "./prisma/schema"
+  },
   "dependencies": {
+    "@prisma/client": "^6.1.0",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.7.1",
+    "@vercel/blob": "^0.27.0",
     "axios": "^1.7.7",
+    "bcryptjs": "^2.4.3",
+    "cookies-next": "^5.0.2",
+    "formik": "^2.4.6",
     "gray-matter": "^4.0.3",
+    "jsonwebtoken": "^9.0.2",
     "next": "15.0.2",
     "nextjs-simple-typewriter": "^5.2.2",
+    "prisma": "^6.1.0",
     "react": "19.0.0-rc-02c0e824-20241028",
     "react-dom": "19.0.0-rc-02c0e824-20241028",
     "react-simple-typewriter": "^5.0.1",
     "remark": "^15.0.1",
     "remark-html": "^16.0.1",
-    "sass": "^1.80.5"
+    "sass": "^1.80.5",
+    "suneditor-react": "^3.6.1",
+    "zukeeper": "^1.0.2",
+    "zustand": "^5.0.2"
   },
   "devDependencies": {
     "@types/node": "^20",

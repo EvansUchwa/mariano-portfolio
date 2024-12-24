@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import "suneditor/dist/css/suneditor.min.css";
 import "../styles/index.scss";
 import Navbar from "@/uikits/nav";
 import Footer from "@/uikits/footer";

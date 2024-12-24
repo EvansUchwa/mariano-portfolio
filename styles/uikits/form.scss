@@ -3,6 +3,61 @@ form {
   flex-direction: column;
   gap: 25px 0;
 }
+
+.formFieldW,
+.formFieldFile {
+  & > label {
+    padding: 10px;
+    background-color: var(--background);
+    color: $primaryColor;
+    font-size: 20px;
+  }
+}
+.formFieldFile {
+  input {
+    display: none;
+  }
+  section {
+    label {
+      display: flex;
+      margin-top: 15px;
+      background-color: transparent;
+      border: solid 1px var(--transparentColor);
+      border-radius: 50px;
+      padding: 25px 35px;
+      color: white;
+      cursor: pointer;
+      &.fileSelected {
+        background-color: $primaryColor;
+        color: var(--foreground);
+      }
+      small {
+        margin-left: auto;
+      }
+    }
+  }
+}
+.formFieldPwd {
+  & > section {
+    display: flex;
+    width: 100%;
+    position: relative;
+    span {
+      position: absolute;
+      background-color: #000;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 15px 20px;
+      border-radius: 30px;
+      color: var(--foreground);
+      cursor: pointer;
+    }
+    input {
+      width: 100%;
+    }
+  }
+}
 .formField {
   display: flex;
   flex-direction: column;
@@ -15,6 +70,7 @@ form {
     top: -20px;
     left: 5%;
     font-size: 20px;
+    z-index: 9999;
   }
   input[type="text"],
   input[type="email"],
