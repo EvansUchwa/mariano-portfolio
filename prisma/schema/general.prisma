@@ -4,10 +4,27 @@ model FileUploadeds {
   url String
   article Articles? @relation("ArticleFile")
   articleId String?
+  project Projects? @relation("ProjectFile")
+  projectId String?
   user User? @relation("UserBanner")
   userId String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+
+
+model Projects {
+  id String @id @default(cuid())
+  title String
+  link String
+  description String
+  autor User @relation("UserProjects", fields: [autorId], references: [id])
+  autorId String
+  views String[] @default([])
+  banner FileUploadeds @relation("ProjectFile", fields: [bannerId], references: [id])
+  bannerId String @unique
+  createdAt DateTime @default(now())
 }
 
 model Articles {
@@ -21,7 +38,6 @@ model Articles {
   banner FileUploadeds @relation("ArticleFile", fields: [bannerId], references: [id])
   bannerId String @unique
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
 }
 
 model User {
@@ -34,10 +50,10 @@ model User {
   role String
   age Int
   articles Articles[] @relation("UserArticles")
+  projects Projects[] @relation("UserProjects")
   banner FileUploadeds? @relation("UserBanner", fields: [bannerId], references: [id])
   bannerId String? @unique
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
 }
 
 

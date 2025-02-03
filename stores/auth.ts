@@ -3,16 +3,7 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { devtools } from "zustand/middleware";
 import { setCookie } from "cookies-next";
-
-interface User {
-  id: string;
-  fullname: string;
-  email: string;
-  role: string;
-  phone: string;
-  address: string;
-  age: number;
-}
+import { User } from "@prisma/client";
 
 interface AuthState {
   isAuthenticated: boolean;

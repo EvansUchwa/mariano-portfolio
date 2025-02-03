@@ -3,6 +3,7 @@ import {
   ageField,
   articleBanner,
   articleContent,
+  articleDesc,
   articleTitle,
   emailField,
   fullnameField,
@@ -13,7 +14,12 @@ import {
 
 export const loginFields = [emailField, passwordField];
 
-export const articleFields = [articleTitle, articleBanner, articleContent];
+export const articleFields = [
+  articleTitle,
+  articleBanner,
+  articleDesc,
+  articleContent,
+];
 
 export const userInfosFields = [
   userBannerField,

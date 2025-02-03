@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React, { ButtonHTMLAttributes, AnchorHTMLAttributes } from "react";
 
-type ButtonVariant = "normal" | "outline";
+type ButtonVariant = "normal" | "outline" | "delete" | "update";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant; // Style du bouton

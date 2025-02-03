@@ -1,0 +1,109 @@
+.modal {
+  width: 100%;
+  position: fixed;
+  z-index: 9999999999;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .modalContent {
+    border-radius: 10px;
+    background-color: var(--background);
+    padding: 20px;
+    width: 70%;
+    position: relative;
+    z-index: 90000;
+    .mc-header {
+      position: absolute;
+      background-color: var(--background);
+      color: var(--foreground);
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+      right: -5px;
+      top: -25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 100000;
+      font-size: 35px;
+    }
+    .mc-body {
+      overflow-y: scroll;
+      max-height: 85vh;
+      background-color: var(--background);
+      padding: 0 10px;
+    }
+  }
+}
+
+.confirmationModal {
+  gap: 20px 0;
+  h1 {
+    text-align: center;
+  }
+  section {
+    gap: 0 20px;
+
+    button {
+      cursor: pointer;
+      padding: 10px 15px;
+      border-radius: 10px;
+      &:first-child {
+        background-color: #efefef;
+        color: grey;
+      }
+      &:last-child {
+        background-color: var(--secondaryColor);
+        color: white;
+      }
+    }
+  }
+}
+
+.modalTrainingList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin: 25px 0;
+  h1 {
+    width: 100%;
+    text-align: center;
+    color: var(--primaryColor);
+  }
+  h3 {
+    padding: 20px;
+    color: var(--primaryColor);
+    border: solid 4px var(--primaryColor);
+    border-radius: 12px;
+    cursor: pointer;
+  }
+}
+.eachChapterAndSubChapters {
+  margin: 15px auto;
+  width: 100%;
+  ul {
+    li {
+      padding: 10px 15px;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+.alreadyAllowed {
+  background-color: var(--secondaryColor);
+  color: white;
+}
+@media screen and (max-width: 758px) {
+  .modal {
+    .modalContent {
+      width: 98%;
+    }
+  }
+}

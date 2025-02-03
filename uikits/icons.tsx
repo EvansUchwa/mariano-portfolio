@@ -1,4 +1,38 @@
 import { SVGProps } from "react";
+
+export function MdiEyeCheck(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      viewBox="0 0 24 24"
+      {...props}
+    >
+      <path
+        fill="currentColor"
+        d="m23.5 17l-5 5l-3.5-3.5l1.5-1.5l2 2l3.5-3.5zM12 9a3 3 0 0 1 3 3a3 3 0 0 1-3 3a3 3 0 0 1-3-3a3 3 0 0 1 3-3m0 8c.5 0 .97-.07 1.42-.21c-.27.71-.42 1.43-.42 2.21v.45l-1 .05c-5 0-9.27-3.11-11-7.5c1.73-4.39 6-7.5 11-7.5s9.27 3.11 11 7.5c-.25.64-.56 1.26-.92 1.85c-.9-.54-1.96-.85-3.08-.85c-.78 0-1.5.15-2.21.42c.14-.45.21-.92.21-1.42a5 5 0 0 0-5-5a5 5 0 0 0-5 5a5 5 0 0 0 5 5"
+      ></path>
+    </svg>
+  );
+}
+
+export function MdiTooltipAccount(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      viewBox="0 0 24 24"
+      {...props}
+    >
+      <path
+        fill="currentColor"
+        d="M20 2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h4l4 4l4-4h4a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2m-8 2.3c1.5 0 2.7 1.2 2.7 2.7S13.5 9.7 12 9.7S9.3 8.5 9.3 7s1.2-2.7 2.7-2.7M18 15H6v-.9c0-2 4-3.1 6-3.1s6 1.1 6 3.1z"
+      ></path>
+    </svg>
+  );
+}
 export function MdiLinkedin(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
@@ -938,6 +972,252 @@ export function LineMdMenuToCloseTransition(props: SVGProps<SVGSVGElement>) {
           values="M5 5L12 5L19 5M5 12H19M5 19L12 19L19 19;M5 5L12 12L19 5M12 12H12M5 19L12 12L19 19"
         ></animate>
       </path>
+    </svg>
+  );
+}
+
+export function SvgSpinnersWifiFade(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      viewBox="0 0 24 24"
+      {...props}
+    >
+      <path
+        fill="currentColor"
+        d="M12,21L15.6,16.2C14.6,15.45 13.35,15 12,15C10.65,15 9.4,15.45 8.4,16.2L12,21"
+        opacity="0"
+      >
+        <animate
+          id="svgSpinnersWifiFade0"
+          fill="freeze"
+          attributeName="opacity"
+          begin="0;svgSpinnersWifiFade1.end+0.2s"
+          dur="0.25s"
+          values="0;1"
+        ></animate>
+        <animate
+          id="svgSpinnersWifiFade1"
+          fill="freeze"
+          attributeName="opacity"
+          begin="svgSpinnersWifiFade3.end+0.5s"
+          dur="0.1s"
+          values="1;0"
+        ></animate>
+      </path>
+      <path
+        fill="currentColor"
+        d="M12,9C9.3,9 6.81,9.89 4.8,11.4L6.6,13.8C8.1,12.67 9.97,12 12,12C14.03,12 15.9,12.67 17.4,13.8L19.2,11.4C17.19,9.89 14.7,9 12,9Z"
+        opacity="0"
+      >
+        <animate
+          id="svgSpinnersWifiFade2"
+          fill="freeze"
+          attributeName="opacity"
+          begin="svgSpinnersWifiFade0.end"
+          dur="0.25s"
+          values="0;1"
+        ></animate>
+        <animate
+          fill="freeze"
+          attributeName="opacity"
+          begin="svgSpinnersWifiFade3.end+0.5s"
+          dur="0.1s"
+          values="1;0"
+        ></animate>
+      </path>
+      <path
+        fill="currentColor"
+        d="M12,3C7.95,3 4.21,4.34 1.2,6.6L3,9C5.5,7.12 8.62,6 12,6C15.38,6 18.5,7.12 21,9L22.8,6.6C19.79,4.34 16.05,3 12,3"
+        opacity="0"
+      >
+        <animate
+          id="svgSpinnersWifiFade3"
+          fill="freeze"
+          attributeName="opacity"
+          begin="svgSpinnersWifiFade2.end"
+          dur="0.25s"
+          values="0;1"
+        ></animate>
+        <animate
+          fill="freeze"
+          attributeName="opacity"
+          begin="svgSpinnersWifiFade3.end+0.5s"
+          dur="0.1s"
+          values="1;0"
+        ></animate>
+      </path>
+    </svg>
+  );
+}
+
+export function SvgSpinners6DotsScale(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      viewBox="0 0 24 24"
+      {...props}
+    >
+      <circle cx="12" cy="3" r="0" fill="currentColor">
+        <animate
+          id="svgSpinners6DotsScale0"
+          fill="freeze"
+          attributeName="r"
+          begin="0;svgSpinners6DotsScale2.end-0.5s"
+          calcMode="spline"
+          dur="0.6s"
+          keySplines="0,1,0,1;.53,0,.61,.73"
+          keyTimes="0;.2;1"
+          values="0;2;0"
+        ></animate>
+      </circle>
+      <circle cx="16.5" cy="4.21" r="0" fill="currentColor">
+        <animate
+          id="svgSpinners6DotsScale1"
+          fill="freeze"
+          attributeName="r"
+          begin="svgSpinners6DotsScale0.begin+0.1s"
+          calcMode="spline"
+          dur="0.6s"
+          keySplines="0,1,0,1;.53,0,.61,.73"
+          keyTimes="0;.2;1"
+          values="0;2;0"
+        ></animate>
+      </circle>
+      <circle cx="7.5" cy="4.21" r="0" fill="currentColor">
+        <animate
+          id="svgSpinners6DotsScale2"
+          fill="freeze"
+          attributeName="r"
+          begin="svgSpinners6DotsScale4.begin+0.1s"
+          calcMode="spline"
+          dur="0.6s"
+          keySplines="0,1,0,1;.53,0,.61,.73"
+          keyTimes="0;.2;1"
+          values="0;2;0"
+        ></animate>
+      </circle>
+      <circle cx="19.79" cy="7.5" r="0" fill="currentColor">
+        <animate
+          id="svgSpinners6DotsScale3"
+          fill="freeze"
+          attributeName="r"
+          begin="svgSpinners6DotsScale1.begin+0.1s"
+          calcMode="spline"
+          dur="0.6s"
+          keySplines="0,1,0,1;.53,0,.61,.73"
+          keyTimes="0;.2;1"
+          values="0;2;0"
+        ></animate>
+      </circle>
+      <circle cx="4.21" cy="7.5" r="0" fill="currentColor">
+        <animate
+          id="svgSpinners6DotsScale4"
+          fill="freeze"
+          attributeName="r"
+          begin="svgSpinners6DotsScale6.begin+0.1s"
+          calcMode="spline"
+          dur="0.6s"
+          keySplines="0,1,0,1;.53,0,.61,.73"
+          keyTimes="0;.2;1"
+          values="0;2;0"
+        ></animate>
+      </circle>
+      <circle cx="21" cy="12" r="0" fill="currentColor">
+        <animate
+          id="svgSpinners6DotsScale5"
+          fill="freeze"
+          attributeName="r"
+          begin="svgSpinners6DotsScale3.begin+0.1s"
+          calcMode="spline"
+          dur="0.6s"
+          keySplines="0,1,0,1;.53,0,.61,.73"
+          keyTimes="0;.2;1"
+          values="0;2;0"
+        ></animate>
+      </circle>
+      <circle cx="3" cy="12" r="0" fill="currentColor">
+        <animate
+          id="svgSpinners6DotsScale6"
+          fill="freeze"
+          attributeName="r"
+          begin="svgSpinners6DotsScale8.begin+0.1s"
+          calcMode="spline"
+          dur="0.6s"
+          keySplines="0,1,0,1;.53,0,.61,.73"
+          keyTimes="0;.2;1"
+          values="0;2;0"
+        ></animate>
+      </circle>
+      <circle cx="19.79" cy="16.5" r="0" fill="currentColor">
+        <animate
+          id="svgSpinners6DotsScale7"
+          fill="freeze"
+          attributeName="r"
+          begin="svgSpinners6DotsScale5.begin+0.1s"
+          calcMode="spline"
+          dur="0.6s"
+          keySplines="0,1,0,1;.53,0,.61,.73"
+          keyTimes="0;.2;1"
+          values="0;2;0"
+        ></animate>
+      </circle>
+      <circle cx="4.21" cy="16.5" r="0" fill="currentColor">
+        <animate
+          id="svgSpinners6DotsScale8"
+          fill="freeze"
+          attributeName="r"
+          begin="svgSpinners6DotsScalea.begin+0.1s"
+          calcMode="spline"
+          dur="0.6s"
+          keySplines="0,1,0,1;.53,0,.61,.73"
+          keyTimes="0;.2;1"
+          values="0;2;0"
+        ></animate>
+      </circle>
+      <circle cx="16.5" cy="19.79" r="0" fill="currentColor">
+        <animate
+          id="svgSpinners6DotsScale9"
+          fill="freeze"
+          attributeName="r"
+          begin="svgSpinners6DotsScale7.begin+0.1s"
+          calcMode="spline"
+          dur="0.6s"
+          keySplines="0,1,0,1;.53,0,.61,.73"
+          keyTimes="0;.2;1"
+          values="0;2;0"
+        ></animate>
+      </circle>
+      <circle cx="7.5" cy="19.79" r="0" fill="currentColor">
+        <animate
+          id="svgSpinners6DotsScalea"
+          fill="freeze"
+          attributeName="r"
+          begin="svgSpinners6DotsScaleb.begin+0.1s"
+          calcMode="spline"
+          dur="0.6s"
+          keySplines="0,1,0,1;.53,0,.61,.73"
+          keyTimes="0;.2;1"
+          values="0;2;0"
+        ></animate>
+      </circle>
+      <circle cx="12" cy="21" r="0" fill="currentColor">
+        <animate
+          id="svgSpinners6DotsScaleb"
+          fill="freeze"
+          attributeName="r"
+          begin="svgSpinners6DotsScale9.begin+0.1s"
+          calcMode="spline"
+          dur="0.6s"
+          keySplines="0,1,0,1;.53,0,.61,.73"
+          keyTimes="0;.2;1"
+          values="0;2;0"
+        ></animate>
+      </circle>
     </svg>
   );
 }

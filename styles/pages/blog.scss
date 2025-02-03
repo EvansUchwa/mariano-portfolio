@@ -1,9 +1,96 @@
 .blog {
-  .articleCard {
+  padding: 20vh 0;
+  margin: auto;
+  width: 90%;
+  h1 {
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  & > div {
+    justify-content: flex-start;
+    gap: 50px;
+  }
+}
+.articleCard {
+  width: 30%;
+  gap: 10px 0;
+  color: var(--foreground);
+  transition: all 0.3s ease-in;
+  .ac-top {
+    width: 100%;
+    gap: 25px;
+    img {
+      width: 100%;
+    }
+    cursor: pointer;
+    & > p {
+      opacity: 0.5;
+      justify-content: space-between;
+      span:nth-child(2) {
+        width: 50%;
+      }
+    }
+    &:hover {
+      transform: scale(1.03);
+      background-color: var(--background);
+    }
+  }
+  .ac-bottom {
+    gap: 0 15px;
   }
 }
 .manage-articles {
   padding: 50px 0;
   width: 90%;
   margin: auto;
+}
+
+.article {
+  width: 90%;
+  margin: auto;
+  padding: 20vh 0;
+  justify-content: space-evenly;
+  .articleDetails {
+    width: 75%;
+    gap: 25px 0;
+    color: var(--foreground);
+    & > img {
+      width: 100%;
+    }
+    b {
+      gap: 0 5px;
+      font-size: 20px;
+    }
+  }
+  .othersArticles {
+    width: 20%;
+    ul {
+      gap: 10px 0;
+      margin-top: 25px;
+      li {
+        gap: 0 10px;
+        align-items: center;
+        img {
+          width: 80px;
+          height: 80px;
+          border-radius: 10px;
+        }
+        p {
+          gap: 6px 0;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 758px) {
+  .articleCard {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1025px) and (min-width: 769px) {
+  .articleCard {
+    width: 45%;
+  }
 }

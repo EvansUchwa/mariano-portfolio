@@ -1,3 +1,5 @@
+import { Articles } from "@prisma/client";
+
 export type allPageTitleAndSubtitleType = {
   title: string;
   subTitle: string;
@@ -10,5 +12,21 @@ export type contactInfosType = {
   email: string;
   tel: string;
   available: boolean;
+  address: string;
+};
+
+export type ArticleWithAutorAndBanner = Articles<{
+  include: {
+    autor: true;
+    banner: true;
+  };
+}>;
+
+export type UserType = {
+  id: string;
+  fullname: string;
+  age: number;
+  email: string;
+  phone: string;
   address: string;
 };

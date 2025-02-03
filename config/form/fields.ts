@@ -58,6 +58,12 @@ export const articleTitle = {
   name: "title",
 };
 
+export const articleDesc = {
+  fieldType: "textarea",
+  label: "Description de l'article",
+  name: "description",
+};
+
 export const articleContent = {
   fieldType: "wysiwyg",
   label: "Contenu de l'article",

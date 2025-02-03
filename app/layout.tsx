@@ -5,6 +5,7 @@ import "../styles/index.scss";
 import Navbar from "@/uikits/nav";
 import Footer from "@/uikits/footer";
 import { MyParticles } from "@/components/particle";
+import Modal from "@/uikits/modal";
 
 const font1 = localFont({
   src: "./fonts/Montserrat-Bold.ttf",
@@ -40,6 +41,7 @@ export default function RootLayout({
         className={`${font1.variable} ${font2.variable}  ${font3.variable}`}
       >
         <Navbar />
+        <Modal />
         {children}
         <MyParticles />
         <Footer />

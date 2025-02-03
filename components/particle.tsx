@@ -83,8 +83,7 @@ export const MyParticles = () => {
           mode: "repulse",
         },
         onClick: {
-          enable: true,
-          mode: "push",
+          enable: false,
         },
       },
       modes: {
