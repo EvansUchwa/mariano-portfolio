@@ -10,7 +10,7 @@ export function FormikRadioInput({
   valueKey,
   labelKey,
 }: RadioFieldType) {
-  const [meta, helpers] = useField(name);
+  const [field, meta, helpers] = useField(name);
   const { value } = meta;
 
   function handleChange(e: React.MouseEvent<HTMLInputElement>) {

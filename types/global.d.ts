@@ -1,4 +1,5 @@
 import { Articles } from "@prisma/client";
+import { ReactElement } from "react";
 
 export type allPageTitleAndSubtitleType = {
   title: string;
@@ -29,4 +30,8 @@ export type UserType = {
   email: string;
   phone: string;
   address: string;
+};
+
+export type ComponentWithChildType = {
+  children: ReactElement;
 };

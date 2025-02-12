@@ -1,50 +1,64 @@
-import axios from "axios";
+"use client";
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
-import { devtools } from "zustand/middleware";
-import { setCookie } from "cookies-next";
+import axios from "axios";
 import { User } from "@prisma/client";
 
 interface AuthState {
-  isAuthenticated: boolean;
   user: User | null;
-  token: string | null;
-  login: (email: string, password: string) => Promise<void>;
+  userLoading: boolean;
+  isAuthenticated: boolean;
+  initialise: () => void;
+  login: () => void;
+  getUser: (token: string) => void;
+  updateUser: (user: User) => void;
   logout: () => void;
-  updateUser: () => void;
 }
 
+const initialState = {
+  user: null,
+  userLoading: true,
+  token: null,
+  isAuthenticated: false,
+};
+
 const useAuthStore = create<AuthState>()(
-  persist(
-    devtools((set) => ({
-      isAuthenticated: false,
-      user: null,
-      token: null,
-      login: async (email, password) => {
-        try {
-          const response = await axios.post("/api/auth/login", {
-            email,
-            password,
-          });
-          const { token, user } = response.data;
-          setCookie("authToken", token, { maxAge: 60 * 60 * 24 }); //
-          set({ user, isAuthenticated: true, token });
-        } catch (error: unknown) {
-          alert("Login failed: " + error);
-        }
-      },
-      updateUser: (user: User) => {
-        set({ user });
-      },
-      logout: () => {
-        setCookie("authToken", "", { maxAge: -1 });
-        set({ user: null, isAuthenticated: false, token: null });
-      },
-    })),
-    {
-      name: "auth",
-    }
-  )
+  // persist(
+  (set, get) => ({
+    ...initialState,
+    initialise: async () => {
+      try {
+        const user = await axios.get("/api/user");
+        set({ user: user.data, userLoading: false });
+      } catch (error) {
+        // set({ user: null, userLoading: false, isAuthenticated: false });
+        get().logout();
+      }
+    },
+    login: () => {
+      set({ isAuthenticated: true });
+    },
+    getUser: async () => {
+      try {
+        const user = await axios.get("/api/user");
+        set({ user: user.data, userLoading: false });
+      } catch (error) {
+        set({
+          user: null,
+          userLoading: false,
+          isAuthenticated: false,
+        });
+      }
+    },
+    updateUser: (user) => {
+      set({ user });
+    },
+    logout: async () => {
+      const user = await axios.post("/api/logout");
+      set(initialState);
+      window.location.href = "/login";
+    },
+  })
+  // )
 );
 
 export default useAuthStore;

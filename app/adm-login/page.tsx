@@ -5,14 +5,13 @@ import { FormButton } from "@/uikits/buttons";
 import FormFieldProvider from "@/uikits/form";
 import { loginFields } from "@/config/form/fieldsArray";
 import useAuthStore from "@/stores/auth";
-import { useRedirectIfAuthenticated } from "@/hooks/useAuth";
+import axios from "axios";
 
 interface LoginI {
   email: string;
   password: string;
 }
 function AdmLogin() {
-  useRedirectIfAuthenticated();
   const formik = useFormik<LoginI>({
     initialValues: {
       email: "",
@@ -24,7 +23,10 @@ function AdmLogin() {
   const login = useAuthStore((state) => state.login);
 
   function handleSubmit(formValues: LoginI) {
-    login(formValues.email, formValues.password);
+    axios
+      .post("/api/login", formValues)
+      .then((res) => login())
+      .catch((err) => alert("Erreur survenue"));
   }
   return (
     <div className="login">

@@ -2,6 +2,19 @@ import prisma from "@/lib/prisma";
 import { fileUploadManager } from "@/utils/file";
 import { NextRequest, NextResponse } from "next/server";
 
+interface UserUpdate {
+  fullname?: string;
+  phone?: string;
+  age?: number;
+  address?: string;
+  banner?: {
+    create: {
+      url: string;
+      name: string;
+    };
+  };
+}
+
 export async function PUT(req: NextRequest) {
   // let body = await req.json();
   const formData = await req.formData();
@@ -13,7 +26,7 @@ export async function PUT(req: NextRequest) {
   const age = formData.get("age");
   const address = formData.get("address");
 
-  const dataToUp: any = {};
+  const dataToUp: UserUpdate = {};
   if (banner) {
     const mediaUploaded = await fileUploadManager(banner as File);
     dataToUp.banner = {
@@ -25,7 +38,6 @@ export async function PUT(req: NextRequest) {
   }
 
   if (fullname) dataToUp.fullname = fullname.toString();
-  if (phone) dataToUp.phone = phone.toString();
   if (phone) dataToUp.phone = phone.toString();
   if (age) dataToUp.age = parseInt(age.toString());
   if (address) dataToUp.address = address.toString();
