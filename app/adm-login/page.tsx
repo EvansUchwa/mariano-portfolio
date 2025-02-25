@@ -26,7 +26,9 @@ function AdmLogin() {
     axios
       .post("/api/login", formValues)
       .then((res) => login())
-      .catch((err) => alert("Erreur survenue"));
+      .catch((err) => {
+        formik.setSubmitting(false);
+      });
   }
   return (
     <div className="login">

@@ -1,6 +1,9 @@
 import { Articles } from "@prisma/client";
-import { ReactElement } from "react";
+import React, { ReactElement } from "react";
 
+export type PageContainerProps = {
+  children: React;
+};
 export type allPageTitleAndSubtitleType = {
   title: string;
   subTitle: string;

@@ -3,7 +3,7 @@ import { emailErrorEnum, genericErrorEnum } from "@/types/errors";
 import { errorResponse } from "@/utils/backend/others";
 import { serialize } from "cookie";
 import { NextRequest, NextResponse } from "next/server";
-import jose from "jose";
+import * as jose from "jose";
 import bcrypt from "bcryptjs";
 
 export async function POST(req: NextRequest, res: NextResponse) {

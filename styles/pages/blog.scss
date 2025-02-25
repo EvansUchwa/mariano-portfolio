@@ -21,9 +21,14 @@
     gap: 25px;
     img {
       width: 100%;
+      height: 250px;
     }
     cursor: pointer;
     & > p {
+      max-width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
       opacity: 0.5;
       justify-content: space-between;
       span:nth-child(2) {

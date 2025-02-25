@@ -2,8 +2,8 @@ import { NextResponse } from "next/server";
 import { MyApiNextRequest } from "./types/api.d";
 import * as jose from "jose";
 
-const publicRoutes = ["/login", "/register"];
-const protectedRoutes = ["/manage/user", "/manage/works"];
+const publicRoutes = ["/adm-login"];
+const protectedRoutes = ["/manage/user", "/manage/works", "manage/articles"];
 const apiRoutes = ["/api/user", "/api/article", "/api/work"];
 
 interface JWTPayload {

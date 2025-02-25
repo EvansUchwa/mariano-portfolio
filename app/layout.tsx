@@ -6,6 +6,7 @@ import Navbar from "@/uikits/nav";
 import Footer from "@/uikits/footer";
 import { MyParticles } from "@/components/particle";
 import Modal from "@/uikits/modal";
+import { Toaster, toast } from "sonner";
 
 const font1 = localFont({
   src: "./fonts/Montserrat-Bold.ttf",
@@ -45,6 +46,7 @@ export default function RootLayout({
         {children}
         <MyParticles />
         <Footer />
+        <Toaster />
       </body>
     </html>
   );

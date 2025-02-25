@@ -55,7 +55,7 @@ const useAuthStore = create<AuthState>()(
     logout: async () => {
       const user = await axios.post("/api/logout");
       set(initialState);
-      window.location.href = "/login";
+      // window.location.href = "/login";
     },
   })
   // )

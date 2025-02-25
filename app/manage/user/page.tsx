@@ -6,6 +6,10 @@ import { FormButton } from "@/uikits/buttons";
 import FormFieldProvider from "@/uikits/form";
 import { userInfosFields } from "@/config/form/fieldsArray";
 import useAuthStore from "@/stores/auth";
+import {
+  reqErrorAlertDisplayer,
+  reqSuccessAlertDisplayer,
+} from "@/utils/others";
 
 interface UserI {
   banner: File | string;
@@ -18,8 +22,6 @@ interface UserI {
 
 function ManageUser() {
   const user = useAuthStore((state) => state.user);
-  const updateUser = useAuthStore((state) => state.updateUser);
-
   const formik = useFormik<UserI>({
     initialValues: {
       banner: "",
@@ -45,8 +47,8 @@ function ManageUser() {
 
     axios
       .put("/api/user/", formData)
-      .then((res) => updateUser(res.data))
-      .catch((err) => console.log(err))
+      .then((res) => reqSuccessAlertDisplayer(res))
+      .catch((err) => reqErrorAlertDisplayer(err))
       .finally(() => console.log("Finito"));
   }
   return (

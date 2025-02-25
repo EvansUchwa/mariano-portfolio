@@ -10,6 +10,10 @@ import {
   passwordField,
   phoneField,
   userBannerField,
+  workBanner,
+  workDesc,
+  workLink,
+  workTitle,
 } from "./fields";
 
 export const loginFields = [emailField, passwordField];
@@ -20,6 +24,8 @@ export const articleFields = [
   articleDesc,
   articleContent,
 ];
+
+export const workFields = [workTitle, workBanner, workLink, workDesc];
 
 export const userInfosFields = [
   userBannerField,

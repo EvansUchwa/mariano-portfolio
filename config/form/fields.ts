@@ -64,12 +64,6 @@ export const articleDesc = {
   name: "description",
 };
 
-export const articleContent = {
-  fieldType: "wysiwyg",
-  label: "Contenu de l'article",
-  name: "content",
-};
-
 export const articleBanner = {
   fieldType: "file",
   label: "Banniere de l'article",
@@ -77,9 +71,40 @@ export const articleBanner = {
   accept: "image/*",
 };
 
+export const articleContent = {
+  fieldType: "wysiwyg",
+  label: "Contenu de l'article",
+  name: "content",
+};
+
 export const mediaField = {
   fieldType: "file",
   label: "Le fichier",
   name: "media",
   accept: "image/*,video/*",
+};
+
+export const workTitle = {
+  fieldType: "text",
+  label: "Titre du projet",
+  name: "title",
+};
+
+export const workLink = {
+  fieldType: "text",
+  label: "Lien du projet",
+  name: "link",
+};
+
+export const workDesc = {
+  fieldType: "textarea",
+  label: "Description du projet",
+  name: "description",
+};
+
+export const workBanner = {
+  fieldType: "file",
+  label: "Image du projet",
+  name: "banner",
+  accept: "image/*",
 };

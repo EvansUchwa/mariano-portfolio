@@ -34,6 +34,7 @@
     "remark": "^15.0.1",
     "remark-html": "^16.0.1",
     "sass": "^1.80.5",
+    "sonner": "^2.0.1",
     "suneditor-react": "^3.6.1",
     "zukeeper": "^1.0.2",
     "zustand": "^5.0.2"

@@ -16,7 +16,7 @@ function ArticleContainer({ children }: ArticleContainerType) {
 function Article() {
   const { name } = useParams();
   const { isLoading, data } = useCustomQuery<ArticleWithAutorAndBanner | null>(
-    "/api/article?one=true&oneId=" + name
+    "/api/article/one?id=" + name
   );
 
   if (isLoading)

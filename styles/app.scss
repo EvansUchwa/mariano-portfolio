@@ -21,6 +21,26 @@ body {
   scroll-behavior: smooth;
 }
 
+.dataContainer {
+  width: 90%;
+  margin: 50px auto;
+  gap: 15px 0;
+  h1,
+  & > button {
+    text-align: center;
+  }
+  & > button {
+  }
+  & > div {
+    gap: 25px;
+    justify-content: space-evenly;
+  }
+}
+.dashbaordNav {
+  padding-top: 20vh;
+  justify-content: center;
+}
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -130,7 +150,7 @@ img {
 
 .dataSpinner {
   width: 90%;
-  margin: auto;
+  margin: 100px auto;
   font-size: 90px;
   color: var(--primaryColor);
   text-align: center;
