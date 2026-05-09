@@ -25,7 +25,10 @@ function AdmLogin() {
   function handleSubmit(formValues: LoginI) {
     axios
       .post("/api/login", formValues)
-      .then((res) => login())
+      .then((res) => {
+        login();
+        window.location.href = "/manage/user";
+      })
       .catch((err) => {
         formik.setSubmitting(false);
       });

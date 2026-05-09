@@ -11,7 +11,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
   const { email, password } = body;
 
   try {
-    const findUser = await prisma.user.findUnique({
+    const findUser = await prisma.users.findUnique({
       where: { email },
     });
 

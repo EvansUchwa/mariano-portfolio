@@ -17,3 +17,26 @@
   width: 90%;
   margin: auto;
 }
+
+.skillCard {
+  width: 200px;
+  border-radius: 50px;
+  padding: 25px 30px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px 0;
+
+  b {
+    font-size: 25px;
+    color: $primaryColor;
+  }
+
+  div {
+    @include makeCircle(50px, $primaryColor);
+    img {
+      width: 60%;
+    }
+  }
+}

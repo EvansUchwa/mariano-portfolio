@@ -1,3 +1,12 @@
+const yerOrNoOptions = [
+  { value: "true", label: "Oui" },
+  { value: "false", label: "Non" },
+];
+
+const fakeSkillExempleOptions = [
+  { value: "true", label: "Docker" },
+  { value: "false", label: "Github" },
+];
 export const emailField = {
   fieldType: "email",
   label: "Votre email",
@@ -21,6 +30,13 @@ export const userBannerField = {
   fieldType: "file",
   label: "La photo de banniere",
   name: "banner",
+  accept: "image/*",
+};
+
+export const userResumeField = {
+  fieldType: "file",
+  label: "Votre Cv",
+  name: "resume",
   accept: "image/*",
 };
 
@@ -50,6 +66,42 @@ export const addressField = {
   label: "Votre adresse",
   ph: "Gotham City",
   name: "address",
+};
+
+export const userDescriptionField = {
+  fieldType: "wysiwyg",
+  label: "DUne petite description",
+  name: "description",
+};
+
+export const userJobRoleField = {
+  fieldType: "text",
+  label: "Votre job",
+  name: "jobRole",
+};
+
+export const userJobDescriptionField = {
+  fieldType: "text",
+  label: "La description de votre job",
+  name: "jobDescription",
+};
+
+export const userIsAvailableField = {
+  fieldType: "radio",
+  label: "Disponible immediatement ?",
+  name: "isAvailable",
+  options: yerOrNoOptions,
+  valueKey: "value",
+  labelKey: "label",
+};
+
+export const userFreelanceField = {
+  fieldType: "radio",
+  label: "Disponible en Freelance ?",
+  name: "freelance",
+  options: yerOrNoOptions,
+  valueKey: "value",
+  labelKey: "label",
 };
 
 export const articleTitle = {
@@ -107,4 +159,25 @@ export const workBanner = {
   label: "Image du projet",
   name: "banner",
   accept: "image/*",
+};
+
+export const workSkillField = {
+  fieldType: "checkbox",
+  label: "Les competences sur ce projet",
+  name: "technologies",
+  // options: fakeSkillExempleOptions,
+  valueKey: "id",
+  labelKey: "name",
+};
+
+export const skillName = {
+  fieldType: "text",
+  label: "Nom de la competence",
+  name: "name",
+};
+
+export const skillIcon = {
+  fieldType: "text",
+  label: "Icone de la competence(Url,voir les site : icone.js)",
+  name: "icon",
 };

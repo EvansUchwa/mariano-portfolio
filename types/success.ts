@@ -13,3 +13,9 @@ export enum articleSuccessEnum {
 export enum profileSuccessEnum {
   updated = "Profile modifier!",
 }
+
+export enum skillSuccessEnum {
+  added = "Competence ajouter!!",
+  updated = "Competence modifier!",
+  deleted = "Competence supprimer!",
+}

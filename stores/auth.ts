@@ -1,16 +1,16 @@
 "use client";
 import { create } from "zustand";
 import axios from "axios";
-import { User } from "@prisma/client";
+import { Users } from "@prisma/client";
 
 interface AuthState {
-  user: User | null;
+  user: Users | null;
   userLoading: boolean;
   isAuthenticated: boolean;
   initialise: () => void;
   login: () => void;
   getUser: (token: string) => void;
-  updateUser: (user: User) => void;
+  updateUser: (user: Users) => void;
   logout: () => void;
 }
 

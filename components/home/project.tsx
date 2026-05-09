@@ -1,38 +1,38 @@
-"use server";
 import React from "react";
 import { SectionTitleAndSubTitle, technologiesIconsEnum } from "../others";
 import { getMarkdownData } from "@/lib/mardown";
 import { projectMardownType } from "@/types/markdown/projects";
+import { Projects } from "@prisma/client";
 
-async function HomeProjects() {
-  const { title, subTitle, projects } = (await getMarkdownData(
-    "projects.md"
-  )) as projectMardownType;
+type HomeProjectsProps = {
+  works: Projects[];
+};
+function HomeProjects({ works }: HomeProjectsProps) {
+  // const { title, subTitle, projects } = (await getMarkdownData(
+  //   "projects.md"
+  // )) as projectMardownType;
 
   return (
     <div className="home-projects" id="works">
-      <SectionTitleAndSubTitle title={title} subTitle={subTitle} />
+      {/* <SectionTitleAndSubTitle title={title} subTitle={subTitle} /> */}
       <div className="hp-list flex f-wrap">
-        {projects.map((item, i) => (
+        {works.map((item, i) => (
           <article
             key={"project nb " + i}
             className="projectCard flex f-column"
           >
             <div>
-              <img
-                src="https://placehold.co/600x400/000000/FFFFFF/png"
-                alt=""
-              />
+              <img src={item.banner.url} alt="" />
               <section>
-                {item.technologies.map((tech, j) => (
+                {/* {item.technologies.map((tech, j) => (
                   <span key={i + "tech nb" + j}>
                     {technologiesIconsEnum[tech]}
                   </span>
-                ))}
+                ))} */}
               </section>
             </div>
-            <b>{item.name} </b>
-            <a href={item.url} target="_blank">
+            <b>{item.title} </b>
+            <a href={item.link} target="_blank">
               Voir le projet
             </a>
           </article>

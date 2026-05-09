@@ -13,7 +13,11 @@ const useModalStore = create<ModalState>()(
     isOpen: false,
     content: null,
     toggle: (content?: ReactNode) => {
-      set((state) => ({ isOpen: !state.isOpen, content }));
+      if (content) {
+        set((state) => ({ isOpen: true, content }));
+      } else {
+        set((state) => ({ isOpen: false, content: null }));
+      }
     },
   }))
 );

@@ -29,6 +29,9 @@ function DashboardContainer({ children }: ComponentWithChildType) {
         <LinkButon variant="normal" href="/manage/articles">
           Gestion des articles
         </LinkButon>
+        <LinkButon variant="normal" href="/manage/skills">
+          Gestion des competences
+        </LinkButon>
         <LinkButon variant="normal" href="/manage/works">
           Gestion des projets
         </LinkButon>

@@ -34,7 +34,8 @@ export function FormikRadioInput({
               type="radio"
               name={name}
               value={item[valueKey]}
-              checked={value == item[valueKey]}
+              defaultChecked={value == item[valueKey]}
+              // checked={value == item[valueKey]}
               id={name + "chk-" + value + i}
               onClick={handleChange}
             />

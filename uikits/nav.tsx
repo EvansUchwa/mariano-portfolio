@@ -9,7 +9,6 @@ function Navbar() {
   const [navOnScroll, setNOS] = useState<boolean>(false);
   const [navOpen, setNavOpen] = useState<boolean>(false);
   useEffect(() => {
-    // navOnScroll
     window.addEventListener("scroll", () => {
       if (window.scrollY > 50) {
         setNOS(true);
@@ -21,7 +20,7 @@ function Navbar() {
   return (
     <nav className={navOnScroll ? "navOnScroll" : ""}>
       <div className="nav-logo">
-        <h1>GM</h1>
+        <img src="/3w.png" alt="Logo " />
       </div>
       {isMobile && (
         <div

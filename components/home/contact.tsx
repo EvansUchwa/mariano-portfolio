@@ -1,11 +1,8 @@
 import React from "react";
 import { MyContactInformationList, SectionTitleAndSubTitle } from "../others";
-import { getMarkdownData } from "@/lib/mardown";
-import { contactInfosType } from "@/types/global";
+import { ProfileUserProps } from "@/app/page";
 
-async function HomeContact() {
-  const contactData = (await getMarkdownData("contact.md")) as contactInfosType;
-
+function HomeContact({ user }: ProfileUserProps) {
   return (
     <div className="home-contact" id="contact">
       <SectionTitleAndSubTitle
@@ -32,7 +29,7 @@ async function HomeContact() {
           </div>
         </form>
         <div>
-          <MyContactInformationList contactData={contactData} />
+          <MyContactInformationList user={user} />
         </div>
       </div>
     </div>

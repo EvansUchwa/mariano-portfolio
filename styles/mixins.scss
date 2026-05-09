@@ -1,0 +1,9 @@
+@mixin makeCircle($size, $bg) {
+  width: $size;
+  height: $size;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $bg;
+}

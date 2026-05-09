@@ -4,6 +4,7 @@ import { AOUWork, deleteWork } from "./crud";
 import dayjs from "dayjs";
 import { ProjectsWithSubModel } from "@/types/model";
 import Link from "next/link";
+import { Skills } from "@prisma/client";
 
 type WorkCardType = {
   work: ProjectsWithSubModel;
@@ -11,7 +12,8 @@ type WorkCardType = {
   refetch: () => void;
 };
 export function WorkCard({ work, refetch, isManager }: WorkCardType) {
-  const { title, description, banner, createdAt, autor, link } = work;
+  const { title, description, banner, technologies, createdAt, autor, link } =
+    work;
   const toggleModal = useModalStore((state) => state.toggle);
 
   return (
@@ -20,6 +22,7 @@ export function WorkCard({ work, refetch, isManager }: WorkCardType) {
         <img src={banner.url} alt="" />
         <b>{title}</b>
         <p>{description}</p>
+        <p>{technologies.map((tech: Skills) => tech.name).join(", ")}</p>
         <Link href={link} target="_blank">
           Voir plus
         </Link>

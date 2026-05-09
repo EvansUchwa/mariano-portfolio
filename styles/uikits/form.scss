@@ -4,6 +4,41 @@ form {
   gap: 25px 0;
 }
 
+.errorMessageOnField {
+  color: red;
+  margin: 15px;
+}
+.formFieldRadio {
+  display: flex;
+  flex-direction: column;
+  gap: 15px 0;
+  & > label {
+    color: $primaryColor;
+    font-size: 20px;
+  }
+  & > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    input {
+      display: none;
+      &:checked {
+        & + p {
+          background-color: $primaryColor;
+          color: white;
+        }
+      }
+      & + p {
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background-color: #efefef;
+        padding: 10px 15px;
+        color: grey;
+      }
+    }
+  }
+}
+
 .formFieldW,
 .formFieldFile {
   & > label {
@@ -58,7 +93,7 @@ form {
     }
   }
 }
-.formField {
+.formField:not(.formFieldRadio) {
   display: flex;
   flex-direction: column;
   position: relative;

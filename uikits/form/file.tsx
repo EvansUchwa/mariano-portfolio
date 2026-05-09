@@ -11,7 +11,7 @@ export function FormikFileInput(props: FileFieldType) {
   const { setValue } = helpers;
 
   return (
-    <div className="formFieldFile flex f-column">
+    <div className="formField formFieldFile flex f-column">
       <label>{label}</label>
 
       <section>

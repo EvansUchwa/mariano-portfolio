@@ -5,13 +5,6 @@ import { Prisma } from "@prisma/client";
 import { genericErrorEnum } from "@/types/errors";
 import { workSuccessEnum } from "@/types/success";
 
-interface WorkUpdate {
-  title: string;
-  link: string;
-  description: string;
-  banner?: { create: { name: string; url: string } };
-}
-
 export const POST = async (req: NextRequest) => {
   const userId = req.headers.get("x-user-id");
   const formData = await req.formData();
@@ -21,18 +14,21 @@ export const POST = async (req: NextRequest) => {
   const autor = userId;
   const description = formData.get("description");
   const media = formData.get("media");
+  const technologies = formData.getAll("technologies");
 
   try {
     if (!title || !link || !media || !autor)
       throw genericErrorEnum.missingRequiredField;
 
     const mediaUploaded = await fileUploadManager(media as File);
-
     await prima.projects.create({
       data: {
         title: title.toString(),
         link: link.toString(),
         description: description?.toString() || "",
+        technologies: {
+          connect: technologies.map((tech) => ({ id: tech.toString() })),
+        },
         autor: {
           connect: { id: autor.toString() },
         },
@@ -61,6 +57,7 @@ export const PUT = async (req: NextRequest) => {
   const workId = formData.get("workId");
   const link = formData.get("link");
   const description = formData.get("description");
+  const technologies = formData.getAll("technologies");
   const media = formData.get("media");
 
   try {
@@ -68,10 +65,14 @@ export const PUT = async (req: NextRequest) => {
       throw genericErrorEnum.missingRequiredField;
     }
 
-    const dataUpdate: WorkUpdate = {
+    const dataUpdate: Prisma.ProjectsUpdateInput = {
       title: title.toString(),
       link: link.toString(),
       description: description?.toString() || "",
+      technologies: {
+        set: [],
+        connect: technologies.map((tech) => ({ id: tech.toString() })),
+      },
     };
 
     if (media) {
@@ -112,6 +113,7 @@ export const GET = async (req: NextRequest) => {
       include: {
         banner: true,
         autor: true,
+        technologies: true,
       },
     };
 

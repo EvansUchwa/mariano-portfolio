@@ -6,7 +6,7 @@ model FileUploadeds {
   articleId String?
   project Projects? @relation("ProjectFile")
   projectId String?
-  user User? @relation("UserBanner")
+  user Users? @relation("UserBanner")
   userId String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -19,11 +19,21 @@ model Projects {
   title String
   link String
   description String
-  autor User @relation("UserProjects", fields: [autorId], references: [id])
+  technologies Skills[]
+  autor Users @relation("UserProjects", fields: [autorId], references: [id])
   autorId String
   views String[] @default([])
   banner FileUploadeds @relation("ProjectFile", fields: [bannerId], references: [id])
   bannerId String @unique
+  createdAt DateTime @default(now())
+}
+
+
+model Skills {
+  id String @id @default(cuid())
+  name String
+  icon String
+  projects    Projects[]
   createdAt DateTime @default(now())
 }
 
@@ -32,7 +42,7 @@ model Articles {
   title String
   content String
   description String
-  autor User @relation("UserArticles", fields: [autorId], references: [id])
+  autor Users @relation("UserArticles", fields: [autorId], references: [id])
   autorId String
   views String[] @default([])
   banner FileUploadeds @relation("ArticleFile", fields: [bannerId], references: [id])
@@ -40,12 +50,17 @@ model Articles {
   createdAt DateTime @default(now())
 }
 
-model User {
+model Users {
   id String @id @default(cuid())
   fullname String
   email String @unique
   address String
   phone String
+  description String
+  jobRole String
+  jobDescription String
+  freelance Boolean
+  isAvailable Boolean
   password String
   role String
   age Int
@@ -55,5 +70,7 @@ model User {
   bannerId String? @unique
   createdAt DateTime @default(now())
 }
+
+
 
 

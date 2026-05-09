@@ -1,5 +1,9 @@
 "use client";
 import { articleFields } from "@/config/form/fieldsArray";
+import {
+  ArticleAddSchema,
+  ArticleUpSchema,
+} from "@/config/form/fieldsValidations";
 import useModalStore from "@/stores/modal";
 import { FormButton } from "@/uikits/buttons";
 import FormFieldProvider from "@/uikits/form";
@@ -32,6 +36,8 @@ export function AOUArticle({ article, refetch }: AOUArticleProps) {
       description: article?.description ?? "",
     },
     onSubmit: handleSubmit,
+    validateOnMount: true,
+    validationSchema: article ? ArticleUpSchema : ArticleAddSchema,
   });
   const { isSubmitting, isValid, setSubmitting } = formik;
   const toggleModal = useModalStore((state) => state.toggle);

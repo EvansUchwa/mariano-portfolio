@@ -1,4 +1,4 @@
-import { contactInfosType } from "@/types/global";
+import { ProfileUserProps } from "@/app/page";
 import {
   SkillIconsAnsible,
   SkillIconsAwsDark,
@@ -19,6 +19,7 @@ type TextSectionProps = {
   title: string;
   subTitle?: string;
 };
+
 export function SectionTitleAndSubTitle({ subTitle, title }: TextSectionProps) {
   return (
     <div className="sectionTitleAndSubTitle flex f-column">
@@ -28,33 +29,28 @@ export function SectionTitleAndSubTitle({ subTitle, title }: TextSectionProps) {
   );
 }
 
-type MyContactInformationListProps = {
-  contactData: contactInfosType;
-};
-export function MyContactInformationList({
-  contactData,
-}: MyContactInformationListProps) {
+export function MyContactInformationList({ user }: ProfileUserProps) {
   return (
     <ul className="contactInformationList">
       <li>
-        <b>Age:</b> <span>{contactData.age} ans</span>
+        <b>Age:</b> <span>{user.age} ans</span>
       </li>
       <li>
-        <b>Freelance:</b> <span>{contactData.available ? "Oui" : "non"}</span>
+        <b>Freelance:</b> <span>{user.isAvailable ? "Oui" : "non"}</span>
       </li>
       <li>
-        <b>Adresse:</b> <span>{contactData.address}</span>
+        <b>Adresse:</b> <span>{user.address}</span>
       </li>
       <li>
         <b>Email:</b>{" "}
         <span>
-          <a href="">{contactData.email}</a>{" "}
+          <a href="">{user.email}</a>{" "}
         </span>
       </li>
       <li>
         <b>Telephone:</b>{" "}
         <span>
-          <a href="">+{contactData.tel}</a>{" "}
+          <a href="">{user.phone}</a>{" "}
         </span>
       </li>
     </ul>

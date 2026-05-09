@@ -1,8 +1,12 @@
 import React from "react";
 import { Typewriter } from "nextjs-simple-typewriter";
 import { Button } from "@/uikits/buttons";
+import { Users } from "@prisma/client";
 
-function HomeBanner() {
+type HomeBannerProps = {
+  user: Users;
+};
+function HomeBanner({ user }: HomeBannerProps) {
   return (
     <div className="home-banner flex">
       <section className="hb-left flex">
@@ -10,7 +14,7 @@ function HomeBanner() {
       </section>
       <section className="hb-right flex f-column">
         <div>
-          <h1>Mariano Gbego</h1>
+          <h1>{user.fullname}</h1>
         </div>
 
         <section className="flex f-column">
@@ -26,11 +30,7 @@ function HomeBanner() {
               loop={500000000}
             />
           </h3>
-          <p>
-            Hello! I am Web Developer from United States, New York. I have rich
-            experience in web site design and building, also I am good at
-            wordpress.
-          </p>
+          <p>{user.jobDescription}</p>
           <div
             className="flex"
             style={{

@@ -22,25 +22,23 @@ function BlogManager() {
   if (isLoading) return <DataSpinner />;
   return (
     <div>
-      {data ? (
-        <DataContainer
-          title="Gestion du blog"
-          actionButton={
-            <Button onClick={newArticleModal}>Nouvel article</Button>
-          }
-        >
-          {data.map((item, i) => (
+      <DataContainer
+        title="Gestion du blog"
+        actionButton={<Button onClick={newArticleModal}>Nouvel article</Button>}
+      >
+        {data ? (
+          data.map((item, i) => (
             <ArticleCard
               refetch={refetch}
               key={"article nb" + i}
               article={item}
               isManager={true}
             />
-          ))}
-        </DataContainer>
-      ) : (
-        <p>Aucun article disponile</p>
-      )}
+          ))
+        ) : (
+          <p>Aucun article disponile</p>
+        )}
+      </DataContainer>
     </div>
   );
 }
